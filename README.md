@@ -1,6 +1,6 @@
-# Members Only
+# Private Events
 
-> Made as a practice for authentication in rails using devise. It allows you to create new users, edit them, add posts and edit them. You only can see the email of the user who wrote the post if you are logged in.
+> Made as a practice for association in rails. It allows you to create events, edit them, invite and uninvite other users. You only can see the New Event button if you are logged in.
 
 
 ![screenshot](app/assets/images/screenshot1.png)
@@ -38,6 +38,7 @@
 
 Use the following commands
 `rspec spec/features/user_registration_spec.rb`
+`rspec spec/features/attendance_spec.rb`
 
 ## Authors
 
