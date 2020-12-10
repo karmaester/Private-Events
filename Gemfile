@@ -6,6 +6,7 @@ ruby '2.7.0'
 gem 'guard', '~> 2.16', '>= 2.16.2'
 gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
 gem 'bulma-rails', '~> 0.9.1'
+gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
