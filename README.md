@@ -37,8 +37,10 @@
 ## How to test it
 
 Use the following commands
-`rspec spec/features/user_registration_spec.rb`
-`rspec spec/features/attendance_spec.rb`
+`rspec spec/features/user_registration_spec.rb`\
+`rspec spec/features/attendance_spec.rb`\
+`rspec spec/features/user_spec.rb`\
+`rspec spec/features/event_spec.rb`
 
 ## Authors
 
