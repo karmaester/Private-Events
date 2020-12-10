@@ -14,4 +14,10 @@ describe "User", type: :feature do
         find("input[type='submit']").click
         expect(page).to have_content("Email")
     end
+    it "fails to login when unexisting email passed" do
+        visit "/login"
+        fill_in 'email', with: 'ciencia@gmail.com'
+        find("input[type='submit']").click
+        expect(page).to have_content("401")
+    end
 end
