@@ -1,26 +1,21 @@
 <div class="section">
 	<div class="container">
 	<div class="columns is-centered">
-
-		<div class="column is-6">
-			
-		<p id="notice"><%= notice %></p>
-
-      <h1 class='title is-4'>Events</h1>
-      
-      <table>
+		<div class="column is-7 translucid">
+      <h2 class="columns is-centered has-text-black title is-3">Upcoming Events</h2>
+      <table class="table is-bordered is-fullwidth">
         <thead>
-          <tr>
-            <th>Name</th>
-            <th>Date</th>
-            <th>Location</th>
-            <th>Description</th>
+          <tr class="table_color">
+            <th class=" has-text-white">Name</th>
+            <th class=" has-text-white">Date</th>
+            <th class=" has-text-white">Location</th>
+            <th class=" has-text-white">Description</th>
             <th colspan="3"></th>
           </tr>
         </thead>
-      
+
         <tbody>
-          <% @events.each do |event| %>
+          <% @events.upcoming_events.each do |event| %>
             <tr>
               <td><%= event.name %></td>
               <td><%= event.date %></td>
@@ -33,14 +28,40 @@
                   <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                 <% end %>
               <% end %>
-              <td><%= link_to 'Attend', new_attendance_path %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
-      
-      <br>
-      <%= display_button_new %>
+      <h2 class="columns is-centered has-text-black title is-3">Previous Events</h2>
+      <table class="table is-bordered is-fullwidth is-hoverable">
+        <thead>
+          <tr class="table_color">
+            <th class=" has-text-white">Name</th>
+            <th class=" has-text-white">Date</th>
+            <th class=" has-text-white">Location</th>
+            <th class=" has-text-white">Description</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @events.previous_events.each do |event| %>
+            <tr>
+              <td><%= event.name %></td>
+              <td><%= event.date %></td>
+              <td><%= event.location %></td>
+              <td><%= event.description %></td>
+              <td><%= link_to 'Show', event %></td>
+              <% if current_user.present? %>
+                <% if event.user_id == current_user.id %>
+                  <td><%= link_to 'Edit', edit_event_path(event) %></td>
+                  <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <% end %>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 		</div>
 		</div>
 	</div>

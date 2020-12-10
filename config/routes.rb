@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   get 'login',  to:  'sessions#new'
   post 'login' ,  to: 'sessions#create'
   get 'logout' => 'sessions#destroy', as: 'logout'
-
+  get 'profile' => 'users#show', as: 'profile'
   get 'attend' => 'attendances#create', as: 'attend'
 end
