@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   
     def display_button_log
       if current_user.present?
-        return 
+        return display_username
       else
         "<a class='button is-success' href='/login'>Sign in</a>".html_safe
       end

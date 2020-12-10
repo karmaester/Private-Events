@@ -10,8 +10,6 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    @event = Event.find(params[:id])
-    @creator = User.find(@event.user_id).username
   end
 
   # GET /events/new
@@ -26,7 +24,7 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @event = current_user.events.build(event_params)
+    @event = Event.new(event_params)
 
     respond_to do |format|
       if @event.save

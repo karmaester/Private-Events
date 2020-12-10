@@ -13,11 +13,6 @@
             <div class="navbar-end">
                 <div class="field is-grouped mt-2 mr-2">
                     <div class='field is-grouped mt-2 mr-2'>
-                    <% if current_user.present? %>
-                        <p class="control">
-                            <%= link_to display_username, edit_user_path, class: "button is-info" %>
-                        </p>
-                    <% end%>
                     <p class='control'>
                         <%= display_button_log %>
                     </p>
