@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    helper_method :current_user
+     helper_method :current_user
     helper_method :display_button_new
     helper_method :display_button_log
     helper_method :display_username
@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   
     def display_button_log
       if current_user.present?
-        return display_username
+        return 
       else
         "<a class='button is-success' href='/login'>Sign in</a>".html_safe
       end
