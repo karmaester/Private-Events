@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class AttendancesController < ApplicationController
   before_action :set_attendance, only: %i[show edit update destroy]
 

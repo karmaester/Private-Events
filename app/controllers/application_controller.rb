@@ -1,6 +1,3 @@
-# frozen_string_literal: true
-# rubocop: disable Style/FrozenStringLiteralComment
-
 class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :display_button_new
@@ -36,4 +33,3 @@ class ApplicationController < ActionController::Base
     return "<a class='button is-success' href='/events/new'>NEW EVENT</a>".html_safe if current_user.present?
   end
 end
-# rubocop: enable Style/FrozenStringLiteralComment
