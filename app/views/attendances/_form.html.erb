@@ -11,15 +11,14 @@
     </div>
   <% end %>
 
-    <div class="field">
-    <%= form.label :email, 'Attendee:' %><br>
-    <%= form.text_field :email %>
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
   </div>
 
   <div class="field">
-    <%= form.label :event, 'Event:' %><br>
-    <%= form.text_field :event, value: @event.title, disabled: true %>
-    <%= form.text_field :attended_event_id, value: request.params["event"], hidden: true %>
+    <%= form.label :event_id %>
+    <%= form.text_field :event_id %>
   </div>
 
   <div class="actions">
