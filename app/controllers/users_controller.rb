@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(session[:user_id])
     @events = Event.all
+    @attendances = Attendance.all
   end
 
   # GET /users/new

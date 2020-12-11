@@ -19,7 +19,7 @@
       <%= link_to 'Edit', edit_user_path(@user) %> 
       </div>
       
-      <h2 class="columns is-centered has-text-black title is-3">Upcoming Events</h2>
+      <h2 class="columns is-centered has-text-black title is-3">Created Upcoming Events</h2>
       <table class="table is-bordered is-fullwidth">
         <thead>
           <tr class="table_color">
@@ -32,7 +32,7 @@
         </thead>
 
         <tbody>
-          <% @user.events.upcoming_events.each do |event| %>
+          <% @user.user_comming_events.each do |event| %>
             <tr>
               <td><%= event.name %></td>
               <td><%= event.date %></td>
@@ -45,7 +45,7 @@
           <% end %>
         </tbody>
       </table>
-      <h2 class="columns is-centered has-text-black title is-3">Previous Events</h2>
+      <h2 class="columns is-centered has-text-black title is-3">Created Previous Events</h2>
       <table class="table is-bordered is-fullwidth is-hoverable">
         <thead>
           <tr class="table_color">
@@ -58,7 +58,7 @@
         </thead>
 
         <tbody>
-          <% @user.events.previous_events.each do |event| %>
+          <% @user.user_past_events.each do |event| %>
             <tr>
               <td><%= event.name %></td>
               <td><%= event.date %></td>
