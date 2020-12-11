@@ -22,16 +22,15 @@ class AttendancesController < ApplicationController
   # POST /attendances
   # POST /attendances.json
   def create
-    @attendance = Attendance.new(attendance_params)
+    @event = Event.find(params[:event_id])
+    @event.attendees << current_user
 
-    respond_to do |format|
-      if @attendance.save
-        format.html { redirect_to @attendance, notice: 'Attendance was successfully created.' }
-        format.json { render :show, status: :created, location: @attendance }
-      else
-        format.html { render :new }
-        format.json { render json: @attendance.errors, status: :unprocessable_entity }
-      end
+    if @event.save
+      redirect_to user_path(current_user)
+      flash[:alert] = 'Nice, you are checked in to the event!'
+    else
+      flash[:alert] = 'Unable to send invite'
+      redirect_to @event
     end
   end
 
