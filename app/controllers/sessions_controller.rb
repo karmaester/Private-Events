@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path
     else
-      render json: { status: 401 }
+      redirect_to root_path, alert: 'Not a user'
     end
   end
 

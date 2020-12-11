@@ -14,7 +14,7 @@ RSpec.describe Attendance, type: :model do
 
   it 'is valid if event and user id are provided' do
     user = User.create(username: 'thisisatest', email: 'test@t.com')
-    event = Event.create(name: 'Event', user_id: user.id)
+    event = Event.create(name: 'Event', location: 'test', description: 'test', user_id: user.id)
     expect(Attendance.new(event_id: event.id, user_id: user.id)).to be_valid
   end
 end

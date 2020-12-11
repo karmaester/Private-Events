@@ -36,12 +36,13 @@
         <%= link_to 'Invite', new_attendance_path%>
       </div>
 		</div>
+    <% if @event.attendances.any? %>
     <div class="columns is-centered">
       <div class="column is-4">
         <table>
           <thead>
             <tr>
-              <th>User</th>
+              <th>Attendees</th>
               <th colspan="3"></th>
             </tr>
           </thead>
@@ -57,5 +58,6 @@
         </table>
       </div>
     </div>
+    <% end %>
 	</div>
 </div>
