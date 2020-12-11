@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  resources :attendances
+  resources :sessions, only: %i[new create show destroy]
+  resources :attendances, only: %i[create destroy]
   resources :users
   resources :events
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :events
-  resources :sessions, only: %i[new create show destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'events#index'
 
