@@ -33,9 +33,6 @@ class AttendancesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /attendances/1
-  # PATCH/PUT /attendances/1.json
-  
   def update
     respond_to do |format|
       if @attendance.update(attendance_params)
